@@ -14,7 +14,17 @@ h1,h2,h3,h4,h5,h6{
 	padding: 2px 0px;
 	color: #666;
 }
+h6{
+	font-size: 16px;
+	line-height 24px;
+}
 
+h1, h2 {
+font-weight: 300 !important;
+}
+.color{
+	color: #9b59bb;
+}
 .social-links{
 	background: #9b59bb;
 	margin-top: 20px;
@@ -177,4 +187,49 @@ h1,h2,h3,h4,h5,h6{
 	color: #fff;
 	text-decoration: none;
 }
-
+footer{
+	font-size: 13px;
+	background: #f6f6f6;
+	color: #444;
+}
+footer .widgets{
+	marigin-top: 20px;
+}
+footer ul{
+	list-style-type: none;
+	margin-left: 0px;
+}
+footer h6{
+	color: #444;
+}
+footer ul li{
+	padding: 3px 0;
+}
+footer a{
+	color: #777;
+}
+header .logo h1 a, header .logo h1 a:visited, header .logo h1 a:hover {
+	color: #666;
+	text-decoration: none;
+}
+header .logo h1 {
+	font-size: 40px;
+	line-height: 45px;
+	margin-bottom: 5px;
+}
+header .logo {
+	padding: 15px 0px;
+}
+header .form {
+	text-align: center;
+	max-width: 270px;
+	margin: 0 auto;
+	width: 260px;
+	padding-top: 40px;
+}
+header {
+	border-top: 2px solid #9b59bb;
+}
+.container{
+	width: 90% !important;
+}
