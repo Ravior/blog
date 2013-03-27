@@ -61,9 +61,10 @@ font-weight: 300 !important;
 	text-decoration: none;
 	display: inline-block;
 }
-.big{
+.big {
 	font-size: 20px !important;
 	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 10px;
 	font-weight: 300;
 }
 .c-block > div {
@@ -385,6 +386,15 @@ header {
 	text-transform: uppercase;
 	font-size: 11px;
 }
+.blog .entry p {
+	margin: 0px 0px 4px 0px;
+}
+.blog .bthumb2 {
+	float: left;
+	margin-top: 8px;
+	margin-right: 8px;
+	border: 1px solid #aaa;
+}
 .blog .entry {
 	margin-bottom: 25px;
 	padding-bottom: 15px;
@@ -469,4 +479,100 @@ header {
 }
 .form-horizontal input[type="text"], .form-horizontal input[type="password"], .form-horizontal textarea {
 	width: 90%;
+}
+.form-actions {
+	padding: 10px 20px 11px;
+	background: transparent;
+	border-top: 0px;
+}
+.btn {
+	background-image: none;
+}
+.comment .avatar {
+	margin-top: 5px;
+	margin-right: 8px;
+}
+i.facebook {
+	background: #3c5b9b;
+}
+i.twitter {
+	background: #2daae1;
+}
+i.linkedin {
+	background: #0173b2;
+}
+i.pinterest {
+	background: #cb2027;
+}
+i.google-plus {
+	background: #f63e28;
+}
+.social i {
+	height: 25px;
+	width: 25px;
+	line-height: 25px;
+	margin: 0px 5px 0px 0px;
+	color: #fff;
+	-webkit-transition: background 1s ease;
+	-moz-transition: background 1s ease;
+	-o-transition: background 1s ease;
+	transition: background 1s ease;
+	text-align: center;
+}
+.paging .current {
+	background: #81499c;
+}
+.paging .current {
+	padding: 5px 8px;
+	color: #fff;
+}
+.paging span, .paging a {
+	display: block;
+	float: left;
+	margin: 2px 2px 2px 0;
+	padding: 5px 8px;
+	text-decoration: none;
+	width: auto;
+	color: #666;
+	background: #fff;
+	border: 1px solid #ddd;
+	font-weight: normal;
+}
+.blog .entry h2 a, .blog .entry h2 a:visited, .blog .entry h2 a:hover {
+	text-decoration: none;
+	color: #777;
+}
+.blog .entry h2 a, .blog .entry h2 a:visited, .blog .entry h2 a:hover {
+	text-decoration: none;
+	color: #777;
+}
+.blog .entry h2 a, .blog .entry h2 a:visited, .blog .entry h2 a:hover {
+	text-decoration: none;
+	color: #777;
+}
+a:hover {
+	color: #81499c;
+}
+.blog .meta a, .blog .meta a:visited {
+	color: #555;
+}
+.blog .meta a, .blog .meta a:visited {
+	color: #555;
+}
+@media (max-width: 767px){
+	header, .navbar, .social-links, .full-slider, footer {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.social-links, footer, .navbar-inner, .full-slider {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	footer, .navbar-inner, .full-slider {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	header .logo {
+		text-align: center;
+	}
 }
