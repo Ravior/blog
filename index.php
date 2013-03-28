@@ -113,7 +113,7 @@ get_header();
 		  </div>  
 		</div>
 		<div class="row">
-			<div class="span6">
+			<div class="span4">
 			   <!-- Timeline #1 -->
 			   <div class="time">
 				  <div class="tidate b-red">
@@ -125,6 +125,8 @@ get_header();
 				  </div>
 				  <div class="clearfix"></div>
 			   </div>
+			</div>
+			<div class="span4">
 			   <div class="time">
 				  <div class="tidate b-blue">
 					 1994
@@ -135,6 +137,8 @@ get_header();
 				  </div>
 				  <div class="clearfix"></div>
 			   </div>
+			</div>
+			<div class="span4">
 			   <div class="time">
 				  <div class="tidate b-green">
 					 1996
@@ -146,7 +150,7 @@ get_header();
 				  <div class="clearfix"></div>
 			   </div>
 			</div>                        
-			<div class="span6">
+			<div class="span4">
 			   <div class="time">
 				  <div class="tidate b-purple">
 					 1992
@@ -157,6 +161,8 @@ get_header();
 				  </div>
 				  <div class="clearfix"></div>
 			   </div>       
+			</div>
+			<div class="span4">
 			   <div class="time">
 				  <div class="tidate b-orange">
 					 1999
@@ -167,6 +173,8 @@ get_header();
 				  </div>
 				  <div class="clearfix"></div>
 			   </div>
+			</div>
+			<div class="span4">
 			   <div class="time">
 				  <div class="tidate b-lblue">
 					 2000

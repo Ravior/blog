@@ -401,6 +401,7 @@ header {
 	border-bottom: 1px solid #eee;
 	font-size: 13px;
 	line-height: 25px;
+	min-height: 300px;
 }
 .blog .bthumb2 img {
 	margin: 0px;
@@ -466,6 +467,7 @@ header {
 	padding: 13px 16px;
 	background: #f8f8f8;
 	border-left: 2px solid #ddd;
+	position: relative;
 }
 .comment .cmeta {
 	font-size: 12px;
@@ -475,6 +477,9 @@ header {
 	font-size: 13px;
 }
 .comments .reply {
+	margin-left: 15px;
+}
+.comments .children{
 	margin-left: 15px;
 }
 .form-horizontal input[type="text"], .form-horizontal input[type="password"], .form-horizontal textarea {
@@ -558,6 +563,23 @@ a:hover {
 }
 .blog .meta a, .blog .meta a:visited {
 	color: #555;
+}
+.navbar .btn, .navbar .btn-group {
+	margin-top: 8px;
+}
+.navbar-inner {
+	min-height: 50px;
+}
+.comment .reply-link{
+	position: absolute;
+	bottom: 2px;
+	right: 0px;
+}
+.comment .reply-link a{
+	color: #fff;
+	font-size: 11px;
+	background: #D47DFF;
+	padding: 5px 10px 5px 10px;
 }
 @media (max-width: 767px){
 	header, .navbar, .social-links, .full-slider, footer {
