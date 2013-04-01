@@ -4,8 +4,8 @@ get_header();
 <div class="content blog">
   <div class="container">
 
-  <h2>Blog</h2>
-  <p class="big grey">Something Goes Here.</p>
+  <h2><?php single_cat_title(); ?> </h2>
+  <p class="big grey"><?php echo category_description(); ?></p>
   <hr>
 
   <div class="row">
@@ -31,7 +31,18 @@ get_header();
                                  
                                  <!-- Thumbnail -->
                                  <div class="bthumb">
-                                    <a href="#"><img src="img/photos/1.jpg" alt=""></a>
+									<?php 
+									if ( has_post_thumbnail() ) {
+									?>
+									<a href="<?php the_permalink();?>">
+									<?php
+									  the_post_thumbnail(array(640,640));
+									?>
+									</a>
+									<?php
+
+									} 
+									?>
                                  </div>
                                  
                                  <!-- Para -->
@@ -86,26 +97,16 @@ get_header();
                            <div class="sidebar">
                               <!-- Widget -->
                               <div class="widget">
-                                 <h4>Search</h4>
-                                 <form method="get" id="searchform" action="#" class="form-search">
-                                    <input type="text" value="" name="s" id="s" class="input-medium">
-                                    <button type="submit" class="btn">Search</button>
-                                 </form>
-                              </div>
-                              <div class="widget">
                                  <h4>Recent Posts</h4>
                                  <ul>
-                                 <li>Etiam adipiscing posuere justo, nec iaculis justo dictum non</li>
-                                 <li>Cras tincidunt mi non arcu hendrerit eleifend</li>
-                                 <li>Aenean ullamcorper justo tincidunt justo aliquet et lobortis diam faucibus</li>
-                                 <li>Maecenas hendrerit neque id ante dictum mattis</li>
-                                 <li>Vivamus non neque lacus, et cursus tortor</li>
+									<?php
+										$recent_posts = wp_get_recent_posts( $args );
+										foreach( $recent_posts as $recent ){
+											echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+										}
+									?>
                                  </ul>
                               </div>
-                              <div class="widget">
-                                 <h4>About</h4>
-                                 <p>Nulla facilisi. Sed justo dui, id erat. Morbi auctor adipiscing tempor. Phasellus condimentum rutrum aliquet. Quisque eu consectetur erat. Proin rutrum, erat eget posuere semper, <em>arcu mauris posuere tortor</em>,velit at <a href="#">magna sollicitudin cursus</a> ac ultrices magna. Aliquam consequat, purus vitae auctor ullamcorper, sem velit convallis quam, a pharetra justo nunc et mauris. </p>
-                              </div>                              
                            </div>                                                
                         </div>
 

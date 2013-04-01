@@ -37,9 +37,21 @@ get_header();
                                     <i class="icon-calendar"></i> <?php the_date('Y-m-d');?> <i class="icon-user"></i> <?php the_author();?> <i class="icon-folder-open"></i> <a href="#">General</a> <span class="pull-right"><i class="icon-comment"></i> <a href="#"><?php comments_number( '0 Comments', '1 Comment', '% Comments' );?></a></span>
                                  </div>
                                  
+
                                  <!-- Thumbnail -->
                                  <div class="bthumb2">
-                                    <a href="#"><img src="img/photos/tn_1.jpg" alt=""></a>
+									<?php 
+									if ( has_post_thumbnail() ) {
+									?>
+									<a href="<?php the_permalink();?>">
+									<?php
+									  the_post_thumbnail(array(180,180));
+									?>
+									</a>
+									<?php
+
+									} 
+									?>
                                  </div>
 								<?php the_content();?>
                                  
@@ -72,8 +84,8 @@ get_header();
                               <!-- Navigation -->
                               
                               <div class="navigation button">  
-                                    <div class="pull-left"><a href="#">« Previous Post</a></div>
-                                    <div class="pull-right"><a href="#">Next Post »</a></div>
+                                    <div class="pull-left"><?php previous_post_link('%link', '« Previous Post', TRUE, '13'); ?></div>
+                                    <div class="pull-right"><?php next_post_link('%link', 'Next Post »', TRUE, '13'); ?></div>
                                     <div class="clearfix"></div>
                               </div>
 
@@ -85,26 +97,16 @@ get_header();
                            <div class="sidebar">
                               <!-- Widget -->
                               <div class="widget">
-                                 <h4>Search</h4>
-                                 <form method="get" id="searchform" action="#" class="form-search">
-                                    <input type="text" value="" name="s" id="s" class="input-medium">
-                                    <button type="submit" class="btn">Search</button>
-                                 </form>
+                                <h4>Recent Posts</h4>
+								<ul>
+								<?php
+									$recent_posts = wp_get_recent_posts( $args );
+									foreach( $recent_posts as $recent ){
+										echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+									}
+								?>
+								</ul>
                               </div>
-                              <div class="widget">
-                                 <h4>Recent Posts</h4>
-                                 <ul>
-                                    <li><a href="#">Sed eu leo orci, condimentum gravida metus</a></li>
-                                    <li><a href="#">Etiam at nulla ipsum, in rhoncus purus</a></li>
-                                    <li><a href="#">Fusce vel magna faucibus felis dapibus facilisis</a></li>
-                                    <li><a href="#">Vivamus scelerisque dui in massa</a></li>
-                                    <li><a href="#">Pellentesque eget adipiscing dui semper</a></li>
-                                 </ul>
-                              </div>
-                              <div class="widget">
-                                 <h4>About</h4>
-                                 <p>Nulla facilisi. Sed justo dui, id erat. Morbi auctor adipiscing tempor. Phasellus condimentum rutrum aliquet. Quisque eu consectetur erat. Proin rutrum, erat eget posuere semper, <em>arcu mauris posuere tortor</em>,velit at <a href="#">magna sollicitudin cursus</a> ac ultrices magna. Aliquam consequat, purus vitae auctor ullamcorper, sem velit convallis quam, a pharetra justo nunc et mauris. </p>
-                              </div>                              
                            </div>                                                
                         </div>
                      </div>

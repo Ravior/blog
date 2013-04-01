@@ -22,7 +22,7 @@
     <div class="row">
       <div class="span6">
         <div class="logo">
-          <h1><a href="#">Nguyen Sy <span class="color">Thanh Son</span></a></h1>
+          <h1><a href="<?php echo home_url();?>">Nguyen Sy <span class="color">Thanh Son</span></a></h1>
           <div class="hmeta">Silence is golden!</div>
         </div>
       </div>
@@ -44,53 +44,30 @@
 		 <span>Menu</span>
 	   </a>
 	   <div class="nav-collapse collapse">
-		 <ul class="nav">
-		   <li><a href="index.html">Home #1</a></li>
-		   <li><a href="index1.html">Home #2</a></li>
-		   <!-- Refer Bootstrap navbar doc -->
-		   <li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages #1 <b class="caret"></b></a>
-			  <ul class="dropdown-menu">
-				<li><a href="landing-page.html">Landing Page</a></li>
-				<li><a href="pricing.html">Pricing Table</a></li>
-				<li><a href="service-3.html">Service</a></li>
-				<li><a href="support.html">Support</a></li>
-				<li><a href="sitemap.html">Sitemap</a></li>
-				<li><a href="timeline.html">Timeline</a></li>
-				<li><a href="404.html">404</a></li>
-				<li><a href="faq.html">FAQ</a></li>
-				<li><a href="register1.html">Register</a></li>
-				<li><a href="login1.html">Login</a></li>
-			  </ul>
-		   </li>                   
-		   <li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages #2<b class="caret"></b></a>
-			  <ul class="dropdown-menu">
-				<li><a href="coming-soon.html">Coming Soon</a></li>
-				<li><a href="features-4.html">Features</a></li>
-				<li><a href="statement.html">Statement</a></li>
-				<li><a href="tasks.html">Tasks</a></li>
-				<li><a href="resume.html">Resume</a></li>
-				<li><a href="projects.html">Projects</a></li>
-				<li><a href="make-post.html">Make Post</a></li>
-				<li><a href="events.html">Events</a></li>
-				<li><a href="error-log.html">Error Log</a></li>
-			  </ul>
-		   </li>
-		   <li><a href="service.html">Service</a></li>
-		   <li><a href="aboutus.html">About Us</a></li>
-		   <li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-			  <ul class="dropdown-menu">
-				<li><a href="blog-2.html">Blog #1</a></li>
-				<li><a href="blog-4.html">Blog #1</a></li>
-				<li><a href="blog-single.html">Blog Single</a></li>
-			  </ul>
-			</li>
-								
-		   <li><a href="portfolio.html">Portfolio</a></li>
-		   <li><a href="contactus.html">Contact</a></li>
-		 </ul>
+		<?php
+		$defaults = array(
+			'theme_location'  => '',
+			'menu'            => '',
+			'container'       => 'div',
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => 'nav',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+		);
+
+		wp_nav_menu( $defaults );
+
+		?>
+
 	   </div>
 	  </div>
    </div>

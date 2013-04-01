@@ -3,6 +3,10 @@
 * Fri Mar 22, 2013 14:52:51 added by Thanh Son 
 * Email: thanhson1085@gmail.com 
 */
+add_theme_support( 'post-thumbnails' );  
+set_post_thumbnail_size( 180, 180, true );  
+if (function_exists('register_sidebar'))
+	register_sidebar();
 function custom_comments($comment, $args, $depth)
 {
     $GLOBALS['comment'] = $comment;
