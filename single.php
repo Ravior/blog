@@ -67,11 +67,11 @@ get_header();
                                  <!-- Social media icons -->
                                  <div class="social">
                                     <h6>Sharing is Sexy: </h6>
-                                    <a href="#"><i class="icon-facebook facebook"></i></a>
-                                    <a href="#"><i class="icon-twitter twitter"></i></a>
-                                    <a href="#"><i class="icon-linkedin linkedin"></i></a>
-                                    <a href="#"><i class="icon-pinterest pinterest"></i></a>
-                                    <a href="#"><i class="icon-google-plus google-plus"></i></a>
+									<a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&t=<?php echo urlencode($post->post_title); ?>"><i class="icon-facebook facebook"></i></a>
+                                    <a href="https://www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink($post->ID));?>" target="_blank"><i class="icon-linkedin linkedin"></i></a>
+                                    <a target="_blank" class="twitter shareLink" title="Tweet" href="http://twitter.com/intent/tweet?url=<?php urlencode(the_permalink()); ?>" data-tweet="<?php the_title(); ?>" data-hashtags="foo,bar" data-via="twitterUsername" ><i class="icon-twitter twitter"></i></a>
+                                    <a target="_blank" class="pinterest shareLink" title="Pin It" href="http://pinterest.com/pin/create/button/?url=<?php urlencode(the_permalink()); ?>" data-media="<?php echo $image_url; ?>" data-description="<?php the_title(); ?> - <?php the_permalink(); ?>" ><i class="icon-pinterest pinterest"></i></a>
+                                    <a target="_blank" class="googleplus shareLink" title="Google+" href="https://plus.google.com/share?url=<?php urlencode(the_permalink()); ?>" ><i class="icon-google-plus google-plus"></i></a>
                                  </div>
                               </div>     
 

@@ -22,15 +22,23 @@ $fields =  array(
 	'author' => '<div class="control-group"> <label class="control-label" for="name">' . __( 'Name' ) . '</label> <div class="controls"> <input type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" class="input-large" id="name"> </div> </div>',
 	'email'  => '<div class="control-group"> <label class="control-label" for="email">' . __( 'Email' ) . '</label> <div class="controls"> <input type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" class="input-large" id="email"> </div> </div>',
 );
+$comment_field = '<div class="control-group"><label class="control-label" for="comment">' . _x( 'Comment', 'noun' ) . '</label><div class="controls"> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>';
  
 $comments_args = array(
     'fields' =>  $fields,
+    'comment_field' =>  $comment_field,
+	'comment_notes_before' => '',
+	'comment_notes_after' => '',
     'title_reply'=>'',
-    'label_submit' => 'Send My Comment'
+    'label_submit' => 'Send'
 );
  
 ?>
 
+<?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+    
+    <p><?php _e( 'Comments are closed here.'); ?></p>
+<?php endif;?>
 <div class="respond well">
  <div class="title"><h5>Post Reply</h5></div>
  
@@ -39,39 +47,7 @@ $comments_args = array(
 <?php
 comment_form($comments_args);
 ?>
-	   <div class="control-group">
-		 <label class="control-label" for="name">Name</label>
-		 <div class="controls">
-		   <input type="text" class="input-large" id="name">
-		 </div>
-	   </div>
-	   <div class="control-group">
-		 <label class="control-label" for="email">Email</label>
-		 <div class="controls">
-		   <input type="text" class="input-large" id="email">
-		 </div>
-	   </div>
-	   <div class="control-group">
-		 <label class="control-label" for="website">Website</label>
-		 <div class="controls">
-		   <input type="text" class="input-large" id="website">
-		 </div>
-	   </div>
-	   <div class="control-group">
-		 <label class="control-label" for="comment">Comment</label>
-		 <div class="controls">
-		   <textarea class="input-xlarge" id="comment" rows="3"></textarea>
-		 </div>
-	   </div>
-	   <div class="form-actions">
-		 <button type="submit" class="btn">Submit</button>
-		 <button type="reset" class="btn">Reset</button>
-	   </div>
    </div>
  </div>
 </div>
-<?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-    
-    <p><?php _e( 'Comments are closed here.'); ?></p>
-<?php endif;?>
 <!-- Comment posting -->

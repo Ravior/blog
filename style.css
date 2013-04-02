@@ -361,6 +361,7 @@ header {
 }
 .button a:hover {
 	background: #81499c;
+	color: #FFF;
 }
 .button a {
 	background: #9b59bb;
@@ -581,6 +582,15 @@ a:hover {
 	background: #D47DFF;
 	padding: 5px 10px 5px 10px;
 }
+.form-horizontal .form-submit{
+	padding-left: 180px;
+}
+@media (max-width: 480px){
+	.form-horizontal .form-submit{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
 @media (max-width: 767px){
 	header, .navbar, .social-links, .full-slider, footer {
 		margin-left: -20px;
@@ -596,5 +606,10 @@ a:hover {
 	}
 	header .logo {
 		text-align: center;
+	}
+}
+@media (min-width: 1200px){
+	.navbar .container{ 
+		width: 1170px;
 	}
 }

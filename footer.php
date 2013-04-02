@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <p class="big"><span>Follow Us On</span> <a href="#"><i class="icon-facebook"></i>Facebook</a> <a href="#"><i class="icon-twitter"></i>Twitter</a> <a href="#"><i class="icon-google-plus"></i>Google Plus</a> <a href="#"><i class="icon-linkedin"></i>LinkedIn</a></p>
+        <p class="big"><span>See Me On</span> <a href="http://www.facebook.com/thanhson1085" target="_blank"><i class="icon-facebook"></i>Facebook</a> <a target="_blank" href="https://twitter.com/thanhson1085"><i class="icon-twitter"></i>Twitter</a> <a href="https://plus.google.com/116877117332728008692/posts" target="_blank"><i class="icon-google-plus"></i>Google Plus</a> <a target="_blank" href="http://www.linkedin.com/pub/nguyen-sy-thanh-son/3a/b74/30b"><i class="icon-linkedin"></i>LinkedIn</a></p>
       </div>
     </div>    
   </div>
