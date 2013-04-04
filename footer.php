@@ -69,7 +69,7 @@
 
       <div class="span12">
           <div class="copy">
-            <h6>Metro <span class="color">Mania</span></h6>
+            <h6>Nguyen Sy <span class="color">Thanh Son</span></h6>
             <p>Copyright © <a href="#">Your Site</a> - <a href="index.html">Home</a> | <a href="aboutus.html">About Us</a> | <a href="faq.html">FAQ</a> | <a href="contactus.html">Contact Us</a></p>
           </div>
       </div>
