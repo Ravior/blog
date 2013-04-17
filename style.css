@@ -299,6 +299,9 @@ header {
 	padding: 15px 15px 15px;
 	filter: none !important;
 }
+.navbar .nav > li > a:hover {
+	background: #f3f3f3 !important;
+}
 .navbar .btn {
 	background: #9b59bb !important;
 }
