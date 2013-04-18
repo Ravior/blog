@@ -28,10 +28,7 @@
       </div>
       <div class="span6">
         <div class="form">
-          <form method="get" id="searchform" action="#" class="form-search">
-            <input type="text" value="" name="s" id="s" class="input-medium">
-            <button type="submit" class="btn">Search</button>
-          </form>
+			<?php get_search_form()?>
         </div>
       </div>
     </div>
