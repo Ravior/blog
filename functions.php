@@ -3,10 +3,23 @@
 * Fri Mar 22, 2013 14:52:51 added by Thanh Son 
 * Email: thanhson1085@gmail.com 
 */
+define('THEMEWIDGET', TEMPLATEPATH . '/widgets');
+require_once(THEMEWIDGET . '/col1.php');
+require_once(THEMEWIDGET . '/col2.php');
+
 add_theme_support( 'post-thumbnails' );  
 set_post_thumbnail_size( 180, 180, true );  
-if (function_exists('register_sidebar'))
-	register_sidebar();
+if (function_exists('register_sidebar')){
+    register_sidebar(array(
+        'name' => __('Footer Widget Area', 'sonnst'),
+        'description' => __('nothing to desc', 'sonnst'),
+        'id' => 'footer-widget-area',
+        'before_widget' => '<div class="span4"><div class="fwidget">',
+        'after_widget' => '</div></div>',
+        'before_title' => '<h6>',
+        'after_title' => '</h6>'
+    ));
+}
 function custom_comments($comment, $args, $depth)
 {
     $GLOBALS['comment'] = $comment;
