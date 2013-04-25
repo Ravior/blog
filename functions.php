@@ -54,3 +54,31 @@ function custom_comments($comment, $args, $depth)
 	  </li>
 <?php
 }
+
+add_action( 'init', 'flex_slider_init' );
+function flex_slider_init() {
+  $labels = array(
+    'name' => 'Flex Slider',
+    'menu_name' => 'Flex Slider'
+
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => true,
+    'hierarchical' => true,
+    'menu_position' => null,
+    'supports' => array( 'title', 'editor'),
+    'rewrite' => array(
+        'slug' => 'flex-slider',
+    ),
+  );
+  register_post_type('flex_slider',$args);
+  flush_rewrite_rules( false );
+}

@@ -12,91 +12,19 @@ get_header();
 		  <div class="span12">
 			<div class="flexslider">
 			  <ul class="slides">
+				<?php 
+				$sliders = query_posts(array('posts_per_page' => -1, 'post_type' => 'flex_slider'));
+				foreach ($sliders as $slider): setup_postdata($slider)
+				?>
 				<li>
-				  <!-- Slider content -->
-				  <div class="flex-caption">
-					<!-- Left column -->
-					<div class="col-l">
-						<h2>What Do  Started Today</h2>
-						<h6>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit. Nulla vitae cursus leo. Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit. Nulla vitae cursus leo.</h6>
-					</div>
-					<!-- Right column -->
-					<div class="col-r">
-					  <!-- Use the class "flex-back" to add background inside flex slider -->
-						<h5>Nulla Vitae Rhoncus</h5>
-						<p>Suspendisse potenti. Morbi ac felis nec mauris imperdiet fermentum. Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit. Nulla vitae cursus leo.</p>
-					  
-					  <!-- Button -->
-					  <div class="button">
-						<a href="#"><i class="icon-circle-arrow-down"></i> Download Our Software Today</a>
-					  </div>
-
-					</div>
-				  </div>
-
+					<?php the_content();?>
 				</li>
+				<?php endforeach;?>
 
-				<li>
-				  <div class="flex-caption flex-center">
-					<h2>Don't Miss This Theme</h2>
-
-					<p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit. Nulla vitae cursus leo. Suspendisse potenti. Morbi ac felis nec mauris imperdiet fermentum. </p>
-
-					  <!-- Button -->
-					  <div class="button">
-						<a href="#">Buy It Now</a>
-					  </div>
-
-				  </div>
-				</li>
-				<li>
-				  <!-- Slider content -->
-				  <div class="flex-caption">
-					<!-- Left column -->
-					<div class="col-l">
-					  <h2>Get Started Today</h2>
-					  <h6>Suspendisse potenti. Morbi ac felis nec mauris imperdiet fermentum. Aenean sodales augue ac lacus hendrerit.</h6>
-
-					  <!-- Button -->
-					  <div class="button">
-						<a href="#"><i class="icon-circle-arrow-down"></i> Download</a>
-					  </div>
-
-					</div>
-					<!-- Right column -->
-					<div class="col-r">
-
-					  <!-- Use the class "flex-back" to add background inside flex slider -->
-					  <div class="flex-back">
-						<h5>Nulla Vitae Rhoncus</h5>
-						<p>Suspendisse potenti. Nulla vitae cursus leo. Morbi ac felis nec mauris imperdiet fermentum. Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit. Nulla vitae cursus leo.</p>
-					  </div>
-
-					</div>
-				  </div>
-
-				</li>
-				<li>
-
-				  <!-- Slider content -->
-				  <div class="flex-caption">
-					<!-- Left column -->
-					<div class="col-l">
-					  <h2>Someone Started Today</h2>
-					  <h6>Suspendisse potenti. Morbi ac felis nec mauris imperdiet fermentum. Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.Vivamus vel ultricies elit.</h6>
-					</div>
-					<!-- Right column -->
-					<div class="col-r">
-
-					  <!-- Use the class "flex-back" to add background inside flex slider -->
-					  
-						<h2>Nulla Vitae Rhoncus</h2>
-						<p>Suspendisse potenti. Morbi ac felis nec mauris imperdiet fermentum. Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit. Nulla vitae cursus leo.</p>
-					</div>
-				  </div>
-				</li>
 			  </ul>
-			<ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="flex-active">3</a></li><li><a class="">4</a></li></ol></div>
+			<ol class="flex-control-nav flex-control-paging">
+			</ol>
+			</div>
 		  </div>
 		</div>
 	  </div>
