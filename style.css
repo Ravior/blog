@@ -588,6 +588,9 @@ a:hover {
 .form-horizontal .form-submit{
 	padding-left: 180px;
 }
+.fwidget{
+	overflow: auto;
+}
 @media (max-width: 480px){
 	.form-horizontal .form-submit{
 		padding-right: 10px;

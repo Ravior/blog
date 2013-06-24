@@ -11,10 +11,11 @@
   <div class="container">
     <div class="row">
 
-      <div class="widgets">
+    <div class="widgets">
 	  <?php
 	  if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-widget-area') ) :
 	  endif; ?>
+    </div>
 
       <div class="span12">
           <div class="copy">
@@ -22,7 +23,6 @@
             <p>Copyright © <a href="#">Your Site</a> - <a href="index.html">Home</a> | <a href="aboutus.html">About Us</a> | <a href="faq.html">FAQ</a> | <a href="contactus.html">Contact Us</a></p>
           </div>
       </div>
-    </div>
   <div class="clearfix"></div>
   </div>
 </footer>
