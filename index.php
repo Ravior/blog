@@ -1,7 +1,6 @@
 <?php
-/**
-* Fri Mar 22, 2013 14:52:26 added by Thanh Son 
-* Email: thanhson1085@gmail.com 
+/*
+ * Template Name: Home Page
 */
 get_header();
 ?>
@@ -13,11 +12,11 @@ get_header();
 			<div class="flexslider">
 			  <ul class="slides">
 				<?php 
-				$sliders = query_posts(array('posts_per_page' => -1, 'post_type' => 'flex_slider'));
-				foreach ($sliders as $slider): setup_postdata($slider)
+				$sliders = get_posts(array('posts_per_page' => -1, 'post_type' => 'flex_slider'));
+				foreach ($sliders as $slider):
 				?>
 				<li>
-					<?php the_content();?>
+					<?php echo $slider->post_content;?>
 				</li>
 				<?php endforeach;?>
 
@@ -34,18 +33,31 @@ get_header();
 		<div class="row center">
 		  <div class="span12">
 			<div class="bor"></div>
-			<h2>Welcome to Metro Mania</h2>
-			<p>Suspendisse potenti. Morbi ac felis nec mauris imperdiet fermentum. Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>
+			<?php
+				if ( have_posts() ) :
+				while ( have_posts() ) : the_post();
+			?>
+			<?php the_content();?>
+			<?php
+				endwhile;
+				endif;
+			?>
 			<div class="bor"></div>
 			<hr>
 		  </div>  
 		</div>
 		<div class="row">
+			<?php
+				$color_class = array('b-red', 'b-purple', 'b-blue', 'b-orange', 'b-green', 'b-lblue');
+				$posts = get_posts(array('post_type' => 'post'));
+				foreach($posts as $key => $post)
+				{
+			?>
 			<div class="span4">
 			   <!-- Timeline #1 -->
 			   <div class="time">
-				  <div class="tidate b-red">
-					 1990
+				  <div class="tidate <?php echo $color_class[$key % count($color_class)];?>">
+					<?php echo $post->post_title;?>
 				  </div>
 				  <div class="timatter">
 					 <h5>Nulla ullamcorper</h5>
@@ -54,66 +66,9 @@ get_header();
 				  <div class="clearfix"></div>
 			   </div>
 			</div>
-			<div class="span4">
-			   <div class="time">
-				  <div class="tidate b-blue">
-					 1994
-				  </div>
-				  <div class="timatter">
-					 <h5>Nulla ullamcorper</h5>
-					 <p>Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.</p>
-				  </div>
-				  <div class="clearfix"></div>
-			   </div>
-			</div>
-			<div class="span4">
-			   <div class="time">
-				  <div class="tidate b-green">
-					 1996
-				  </div>
-				  <div class="timatter">
-					 <h5>Nulla ullamcorper</h5>
-					 <p>Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.</p>
-				  </div>
-				  <div class="clearfix"></div>
-			   </div>
-			</div>                        
-			<div class="span4">
-			   <div class="time">
-				  <div class="tidate b-purple">
-					 1992
-				  </div>
-				  <div class="timatter">
-					 <h5>Nulla ullamcorper</h5>
-					 <p>Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.</p>
-				  </div>
-				  <div class="clearfix"></div>
-			   </div>       
-			</div>
-			<div class="span4">
-			   <div class="time">
-				  <div class="tidate b-orange">
-					 1999
-				  </div>
-				  <div class="timatter">
-					 <h5>Nulla ullamcorper</h5>
-					 <p>Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.</p>
-				  </div>
-				  <div class="clearfix"></div>
-			   </div>
-			</div>
-			<div class="span4">
-			   <div class="time">
-				  <div class="tidate b-lblue">
-					 2000
-				  </div>
-				  <div class="timatter">
-					 <h5>Nulla ullamcorper</h5>
-					 <p>Praesent at tellus porttitor nisl porttitor sagittis. Mauris in massa ligula, a tempor nulla. Ut tempus interdum mauris vel vehicula. Nulla ullamcorper tortor commodo in sagittis est accumsan.</p>
-				  </div>
-				  <div class="clearfix"></div>
-			   </div>
-			</div>
+			<?php
+				}
+			?>
 		 </div>
 		<div class="color-blocks">
 			<div class="row">

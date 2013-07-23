@@ -20,7 +20,7 @@
       <div class="span12">
           <div class="copy">
             <h6>Nguyen Sy <span class="color">Thanh Son</span></h6>
-            <p>Copyright © <a href="#">Your Site</a> - <a href="index.html">Home</a> | <a href="aboutus.html">About Us</a> | <a href="faq.html">FAQ</a> | <a href="contactus.html">Contact Us</a></p>
+            <p>Copyright © <a href="#">Nguyen Sy Thanh Son</a> - <a href="<?php echo get_bloginfo('url');?>">Home</a> | <a href="?page_id=2">About Us</a></p>
           </div>
       </div>
   <div class="clearfix"></div>
